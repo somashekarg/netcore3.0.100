@@ -20,7 +20,9 @@ PROJECT_VERSION=$(grep -oPm1 "(?<=<TargetFramework>)[^<]+" ${BUILD_DIR}/*.csproj
 echo "The current project version: ${PROJECT_VERSION}"
 
 NETCORE_VERSION="2.2.401"
-if [ $PROJECT_VERSION == "netcoreapp2.2" ]; then
+if [ $PROJECT_VERSION == "netcoreapp2.1" ]; then
+	NETCORE_VERSION="2.1.403"
+elif [ $PROJECT_VERSION == "netcoreapp2.2" ]; then
 	NETCORE_VERSION="2.2.402"
 elif [ $PROJECT_VERSION == "netcoreapp3.0" ]; then
 	NETCORE_VERSION="3.0.100"
